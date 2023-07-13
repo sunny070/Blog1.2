@@ -1,0 +1,10 @@
+
+
+
+
+
+
+
+
+php artisan make:controller CategoryController -m Category
+Binds the model to the controller
