@@ -48,4 +48,11 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class,'post_tag' );
     }
+    public static function searchPost($search)
+    {
+        return empty($search) ?static::query() 
+        :static::query()->Where('id', 'like', '%' .$search. '%')
+        ->orWhere('title' , 'like', '%' . $search . '%')
+        ->orWhere('body' , 'like', '%' . $search . '%');
+    }
 }

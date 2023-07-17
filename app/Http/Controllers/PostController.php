@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Tag;
+use App\Models\Category;
+
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -20,7 +23,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.crete');
+        return view('dashboard.posts.crete',[
+            'tags'          => Tag::all(),
+            'categories'    => Category::all(),
+            
+        ]);
     }
 
     /**
@@ -28,7 +35,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
