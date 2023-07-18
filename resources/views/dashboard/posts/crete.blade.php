@@ -31,6 +31,8 @@
                                     <x-label for="cover_image" value="{{ __('Cover Image') }}" />
                                     <x-input class="block w-full mt-1" id="cover_image" type="file" name="cover_image" />
                                     <span class="mt-2 text-xs text-gray-500">File type: jpg,png only</span>
+                                    <x-input-error for="cover_image" class="mt-2" />
+
                                 </div>
                                 {{-- title --}}
                                 <div>
@@ -54,6 +56,9 @@
 
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
+                                    </select>
+                                    <x-input-error for="category_id" class="mt-2" />
+
                                 </div>
                                 {{-- Body --}}
                                 <div>
@@ -67,7 +72,8 @@
                                 <div>
                                     <x-label class="block w-full mt-1" for="published_at" value="{{ __('Schedule Date') }}" />
                                     <x-pikaday name="published_at" styling="block w-full mt-1" format="YYYY-MM-DD" />
-                                    <x-input-error for="published_at" class="mt-2 block w-full" />
+                                    <x-input-error for="published_at" class="mt-2" />
+
                                 </div>
                                 {{-- Tags --}}
                                 <x-tags :tags="$tags" />

@@ -18,8 +18,8 @@ class Index extends Component
     {
         return view('livewire.posts.index',[
             'posts' => Post::searchPost($this->search)
-            ->orederby($this->orderBy,$this->orderAsc ? 'asc' : 'desc')
-            ->pagination($this->perPage),
+            ->orderBy($this->orderBy,$this->orderAsc ? 'asc' : 'desc')
+            ->paginate($this->perPage),
         ]);
     }
 }
