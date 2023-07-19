@@ -40,6 +40,7 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
+        // return $request;
         $tags = explode(',', $request->tags);
         $post           = new Post;
         $post->title    =$request ->title;

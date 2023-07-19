@@ -52,15 +52,13 @@ Route::group(['middleware'=>['auth'],'prefix' =>'dashboard'],function(){
 
 
     // Posts
-    Route::group(['prefix'=> 'posts', 'as'=>'posts.'], function(){
-        Route::get('/',[PostController::class,'index'])->name('index');
-        Route::get('create',[PostController::class,'create'])->name('create');
-        Route::post('/',[PostController::class,'store'])->name('store');
-        Route::get('/{post:slug}/edit',[PostController::class,'edit'])->name('edit');
-        Route::put('/{post:slug}',[PostController::class,'update'])->name('update');
-        Route::get('/{post:slug}',[PostController::class,'show'])->name('show');
-
-        Route::delete('/{post:slug}/delete',[PostController::class,'destroy'])->name('delete');
+    Route::group(['prefix' => 'posts', 'as' => 'posts.'], function () {
+        Route::get('/', [PostController::class, 'index'])->name('index');
+        Route::get('create', [PostController::class, 'create'])->name('create');
+        Route::post('/', [PostController::class, 'store'])->name('store');
+        Route::get('{post:slug}/edit', [PostController::class, 'edit'])->name('edit');
+        Route::put('{post:slug}', [PostController::class, 'update'])->name('update');
+        Route::get('{post:slug}', [PostController::class, 'show'])->name('show');
     });
 });
 // Route::middleware([

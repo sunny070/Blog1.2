@@ -71,7 +71,9 @@
                                 {{-- Schedule --}}
                                 <div>
                                     <x-label class="block w-full mt-1" for="published_at" value="{{ __('Schedule Date') }}" />
-                                    <x-pikaday name="published_at" styling="block w-full mt-1" format="YYYY-MM-DD" />
+                                    {{-- <x-pikaday name="published_at" styling="block w-full mt-1" format="YYYY-MM-DD" /> --}}
+                                    <x-input class="block w-full mt-1" id="published_at" type="date" name="published_at" />
+
                                     <x-input-error for="published_at" class="mt-2" />
 
                                 </div>
