@@ -78,8 +78,17 @@
 
                                 </div>
                                 {{-- Tags --}}
-                                <x-tags :tags="$tags" />
-
+                                {{-- <x-tags :tags="$tags" />
+                                 --}}
+<div>
+    <x-label for="tags" value="{{ __('Body') }}" />
+    <select name="tags[]" id="create_post" multiple x-data="{}" x-init='function () {choices($el)}'>
+        @foreach ($tags as $tag)
+            
+        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+        @endforeach
+    </select>
+</div>
 
                                 {{-- Meta Description --}}
                                 <div>

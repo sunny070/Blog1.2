@@ -41,7 +41,7 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         // return $request;
-        $tags = explode(',', $request->tags);
+        // $tags = explode(',', $request->tags);
         $post           = new Post;
         $post->title    =$request ->title;
         $post->slug = Str::slug($request->title);
@@ -64,7 +64,7 @@ class PostController extends Controller
             $post->cover_image = $fileExtention;
         };
         $post->save();
-        $post->tags()->sync($tags);
+        $post->tags()->sync($request->tags);
 
         return redirect()->route('posts.index')->with('success','Post Created Successfully');
 
