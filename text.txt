@@ -13,3 +13,9 @@ creating post category post and Tags using the same method
 
 after that we need the blade ui kit to proceed further
 Installing the Blade Ui-Kit
+
+
+
+
+
+A new route was being created after creating the category tag and post basically for the home page

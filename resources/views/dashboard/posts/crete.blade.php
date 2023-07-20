@@ -29,7 +29,8 @@
                             <div class="space-y-6">
                                 <div>
                                     <x-label for="cover_image" value="{{ __('Cover Image') }}" />
-                                    <x-input class="block w-full mt-1" id="cover_image" type="file" name="cover_image" />
+                                    <x-input class="block w-full mt-1" id="cover_image" type="file"
+                                        name="cover_image" />
                                     <span class="mt-2 text-xs text-gray-500">File type: jpg,png only</span>
                                     <x-input-error for="cover_image" class="mt-2" />
 
@@ -37,7 +38,7 @@
                                 {{-- title --}}
                                 <div>
                                     <x-label for="title" value="{{ __('Title') }}" />
-                                    <x-input id="title" class="block w-full mt-1" type="text" name="title"
+                                    <x-input id="title" class="block w-50 mt-1" type="text" name="title"
                                         :value="old('title')" autofocus autocomplete="title" />
                                     <span class="mt-2 text-xs text-gray-500">Maximum 200 characters</span>
                                     <x-input-error for="title" class="mt-2" />
@@ -70,25 +71,27 @@
                                 </div>
                                 {{-- Schedule --}}
                                 <div>
-                                    <x-label class="block w-full mt-1" for="published_at" value="{{ __('Schedule Date') }}" />
-                                    {{-- <x-pikaday name="published_at" styling="block w-full mt-1" format="YYYY-MM-DD" /> --}}
-                                    <x-input class="block w-full mt-1" id="published_at" type="date" name="published_at" />
+                                    <x-label class="block w-full mt-1" for="published_at"
+                                        value="{{ __('Schedule Date') }}" />
+                                    <x-pikaday name="published_at" styling="block w-full mt-1" format="YYYY-MM-DD" />
+                                    {{-- <x-input class="block w-40 mt-1" id="published_at" type="date"
+                                        name="published_at" /> --}}
 
                                     <x-input-error for="published_at" class="mt-2" />
 
                                 </div>
-                                {{-- Tags --}}
-                                {{-- <x-tags :tags="$tags" />
-                                 --}}
-<div>
-    <x-label for="tags" value="{{ __('Body') }}" />
-    <select name="tags[]" id="create_post" multiple x-data="{}" x-init='function () {choices($el)}'>
-        @foreach ($tags as $tag)
-            
-        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-        @endforeach
-    </select>
-</div>
+                                {{-- Tags The tag Component is useless if we use this method--}}
+                                {{--<x-tags :tags="$tags" />--}}
+                                <div>
+                                    <x-label for="tags" value="{{ __('Body') }}" />
+                                    <select name="tags[]" id="create_post" multiple x-data="{}"
+                                        x-init='function () {choices($el)}'>
+                                        @foreach ($tags as $tag)
+
+                                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
                                 {{-- Meta Description --}}
                                 <div>

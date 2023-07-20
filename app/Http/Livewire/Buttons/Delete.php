@@ -18,9 +18,9 @@ class Delete extends Component
         $this->confirmingPostDeletion=true;
     }
     public function deletePost(){
-        File::delete(public_path('img/blog/' .$this->post->cover_image));
-        session()->flash('error','Post Successfully Deleted');
+        File::delete(storage_path('app/public/images/' .$this->post->cover_image));
         $this->post->delete();
+        session()->flash('error','Post Successfully Deleted');
         return redirect()->route('posts.index')->with('error','Post Successfully Deleted');
     }
     public function render()

@@ -27,6 +27,12 @@
       id="nav-content">
       <ul class="list-reset lg:flex justify-end flex-1 items-center">
         {{-- Dashboard --}}
+        <li class="mr-3">
+          <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+            href="{{ route('blog') }}" :active="request()->routeIs('blog')">Blog</a>
+        </li>
+
+
         @auth
         <div class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4">
           <x-nav-link href="{{ route('dashboard.index') }}" :active="request()->routeIs('dashboard.index')">
@@ -34,20 +40,28 @@
           </x-nav-link>
         </div>
         @else
+
         {{-- <li class="mr-3">
           <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
             href="#">About</a>
         </li> --}}
+
+
         <li class="mr-3">
           <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
             href="{{ route('login') }}" :active="request()->routeIs('login')">LogIn</a>
         </li>
+
+
         <li class="mr-3">
           <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
             href="{{ route('register') }}" :active="request()->routeIs('register')">Register</a>
         </li>
         @endauth
+
       </ul>
+
+      
       @auth
       <div class="ml-3 relative">
         <x-dropdown align="right" width="48">
