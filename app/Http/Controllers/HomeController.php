@@ -22,6 +22,7 @@ class HomeController extends Controller
             ->latest()
             ->take(3)
             ->get(),
+            
         ]);
     }
 }

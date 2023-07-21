@@ -18,4 +18,4 @@ Installing the Blade Ui-Kit
 
 
 
-A new route was being created after creating the category tag and post basically for the home page
+A new route was being created after creating the category tag and post basically for the home pagecreated the featured post and fetched the data 

@@ -14,4 +14,5 @@ class BlogController extends Controller
     {
         return view('pages.blog.index');
     }
+    
 }
